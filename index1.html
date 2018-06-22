@@ -1,0 +1,53 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>Javascript sample code</title>
+ <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<h2>This is javascript sample code</h2>
+<script type="text/javascript">
+	"use strict";
+	let name = "peter";
+
+//function declaration
+	function Country () {
+	Country.prototype.name = "kenya";
+	Country.prototype.president = "Alex";
+	}
+	var pname = new Country ()
+	document.write(pname.name);
+
+//recursion
+document.write("<h3>recursion</h3><br/>");
+ function power(base, exponent) {
+   if (exponent == 0) {
+     return 1;
+   } else {
+     return base * power(base, exponent - 1);
+   }
+}
+document.write(power(2, 3));
+
+
+
+function Country1(theCountryName, thePresidentName){
+this.countryName = theCountryName;
+this.presidentName = thePresidentName;
+}
+Country1.prototype = {
+constructor:Country1,
+displayDetails:function(){
+return this.presidentName + " is the president of " + this.presidentName}
+}
+let countryDetails = new Country1("Kenya","alex");
+console.log(countryDetails.displayDetails());
+
+
+ 
+
+
+</script>
+</body>
+
+</html>

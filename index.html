@@ -1,0 +1,335 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+     <script type="text/javascript">
+      "use strict"
+      //normal object declaration
+      let blogBody = {
+        "blog1":{
+          "body":"Linux Administration entails the upkeep, configuration, and reliable operation of a Linux system to ensure uptime, efficient performance, proper utilization of resources, and security of the system. The report",
+          "title":"Server Administration"
+        },
+        "blog2": {
+        "body":"Foundation is one of the advanced front-end frameworks for designing beautiful responsive websites built by ZURB in 2008, contrarily, Twitter Bootstrap is the most popular framework designed by Mark  Toto and Jacob Thornton.",
+        "title":"Foundation and Bootstrap"
+        }
+      };
+      //looping through objects
+      for (const key of Object.keys(blogBody)) {
+            console.log(key, blogBody[key].title);
+            console.log(key, blogBody[key].body);
+        }
+      //normal object declaration
+      //object declaration using constructor
+
+        function mostViewed (articleTitle) {
+           this.articleTitle = articleTitle ;
+        }
+
+      //object declaration using constructor
+
+      //function declaration and object creation using constructure prototype
+      function blogTitle(theBlogName){
+        this.bTitle = theBlogName;
+      }
+      blogTitle.prototype = {
+        constructor:blogTitle,
+        displayTitle:function(){
+          return this.bTitle 
+        }
+      }
+      let blogHead = new  blogTitle("<title>javascript sample4 code</title>");
+      document.write(blogHead.displayTitle()); //inheritances
+      //function declaration and object creation using constructure prototype
+
+
+
+
+    </script>
+
+
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+    
+    <!-- Start Top Bar -->
+    <div class="top-bar grid-x ">
+      <div class="top-bar-left small-4 medium-6 large-7 medium-offset-1">
+        <ul class="menu">
+          <li class="menu-text">
+            <script type="text/javascript">
+              //call to function for display object1
+              let navHead = new  blogTitle("javascript sample code");
+               document.write(navHead.displayTitle()); 
+               //call to function for display
+            </script>
+
+          </li>
+
+        </ul>
+      </div>
+      <div class="top-bar-left small-4 medium-4 large-2">
+        <ul class="menu">
+          <li class="is-active"><a href="#">Home</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#" data-toggle="blog">Login</a>
+           <div class="dropdown-pane" data-position="bottom" data-alignment="left" id="blog" data-dropdown data-auto-focus="true">
+            <div class="bg-primary">
+              <a href="#">Tech Blog/</a>
+              <a href="#">Daily Report</a>
+            </div>
+          </div>
+          </li>
+        </ul>
+        
+      </div>
+    </div>
+
+  
+    <!-- End Top Bar -->
+
+    
+
+<article class="grid-container" style="margin-top: 10px;">
+
+  <div class="callout large secondary medium-9">
+      <div class="text">
+        
+          <script type="text/javascript">
+            //call to function for display object 2
+              let calloutHead = new  blogTitle("<h1>Learning javascript ECMAScript 6</h1>");
+               document.write(calloutHead.displayTitle()); 
+              //end of call to function to display obejct 2
+            </script>
+
+        <p class="lead">Contains all blogs written on daily basis by cytonn software developer interns; the blogs are mainly two...</p>
+        <a href="#" class="primary button">Read More</a>
+      </div>
+    </div>
+
+    <div class="grid-x grid-margin-x" id="content">
+
+      <div class="medium-9 cell">
+       <!--  blog 1 -->
+        <div class="card">
+          <img class="thumbnail" src="https://picsum.photos/850/350?image=0">
+          <div class="card-section">
+          <h3>Server Administration </h3>
+              <p>
+                <script type="text/javascript">document.write(blogBody.blog1.body);</script>
+              </p>
+              <button type="button" class="primary button">Read More</button>
+          <div class="callout">
+            <ul class="menu simple">
+               <li>Posted on June 12, 2018 by</li>
+              <li><a href="#"> Didinya Johnson</a></li>
+            </ul>
+          </div>
+        </div>
+        </div>
+        <!-- nd of blog 1 -->
+
+        <!-- blog 2 -->
+        <div class="card">
+           
+          <img class="thumbnail" src="https://placekitten.com/850/350?image=2">
+          <div class="card-section">
+          <h3>Foundation and Bootstrap </h3>
+          <p>
+            <script type="text/javascript">document.write(blogBody.blog2.body);</script>
+          </p>
+            <button type="button" class="primary button">Read More</button>
+          <div class="callout">
+            <ul class="menu simple">
+               <li>Posted on June 12, 2018 by</li>
+              <li><a href="#"> Didinya Johnson</a></li>
+             
+            </ul>
+          </div>
+        </div>
+        </div>
+        <!-- end of blog 2 -->
+
+      </div>
+
+      <div class="medium-3 cell" data-sticky-container>
+        <div class="cardsticky" data-sticky data-anchor="content">
+          <div class="card">
+            <div class="card-section">
+              <h4>Javascript Math</h4><hr/>
+
+              <div id="results">
+                
+              </div>
+              <div id="results_add">
+                
+              </div>
+              <br/>
+            <form>
+                First Number : <input type="number" name="baseValue" id="num1" required="required">
+                Second Number : <input type="number" name="xponentValue" id="num2" required="required">
+                <button type="button" class="primary button" onclick=" math()">Calculate</button>
+              </form>
+
+              <script type="text/javascript">
+                
+              </script>
+
+            </div>
+          
+           <div class="card-section">
+            <h4>Most Viewed</h4>
+          <ul>
+            <li><a href="#">
+              <script type="text/javascript">
+                //using constructor partten to create objects
+                  let mostviewedTitle = new  mostViewed("Javascript is awesome");
+                  document.write(mostviewedTitle.articleTitle);
+                  //using constructor pattern to create objects
+              </script></a>
+            </li>
+            <li><a href="#">
+              <script type="text/javascript">
+                //using constructor pattern to create objects
+                let mostviewedTitle1 = new  mostViewed(" Foundation and Bootstrap");
+                document.write(mostviewedTitle1.articleTitle);
+                //using constructor pattern to create objects
+              </script></a> 
+            </li>
+            <li><a href="#">Css and Sass</a> </li>
+            <li><a href="#">Linux Administration</a> </li>
+            <li><a href="#">Control version management</a> </li>
+          </ul>
+        </div>
+        </div>
+
+          <div class="card">
+            <div class="card-section">
+          <h4>Categories</h4>
+           
+          <ul>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Others</a></li>
+            <li><a href="#">Tech</a></li>
+          </ul>
+        </div>
+        </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="grid-x cell">
+      <ul class="pagination" role="navigation" aria-label="Pagination">
+        <li class="disabled">Previous</li>
+        <li class="current"><span class="show-for-sr">You're on page</span> 1</li>
+        <li><a href="#" aria-label="Page 1">1</a></li>
+        <li><a href="#" aria-label="Page 2">2</a></li>
+        <li><a href="#" aria-label="Page 3">3</a></li>
+        <li><a href="#" aria-label="Page 4">4</a></li>
+        <li><a href="#" aria-label="Next page">Next</a></li>
+      </ul>
+    </div>
+</article>
+
+<footer>
+  <p class="m-0 text-center text-white">Copyright &copy; Johnson Didinya 2018</p>
+</footer>
+  <script type="text/javascript">
+
+      //closure example 
+        let math = () => {
+
+          let result = document.getElementById("results");
+          let resultAdd = document.getElementById("results_add");
+          let num1 = document.getElementById("num1").value;
+          let num2 = document.getElementById("num2").value;
+
+          console.log(num1);
+          console.log(num2);
+       //closure dividing two numbers
+         function divideVal() {
+           if (num2 == 0) {
+              return result.innerHTML += num1 + " divided by " + num2 + " = infinity<hr/>";
+           } else {
+            
+            let answer = (num1/num2 );
+             return result.innerHTML += num1 + " divided by " + num2 + " = " + answer + "<hr/>";
+            console.log(answer);
+           
+           }
+        }
+        
+        //closure adding values
+         function addVal() {
+           if (num2 == "" || num1 == "") {
+              return result.innerHTML +=  " enter two values to  <hr/>" ;
+           } else {
+            
+            let answer = (num1+num2 );
+             return result.innerHTML += num1 + " added to " + num2 + " = " + answer + "<hr/>";
+            console.log(answer);
+           
+           }
+        }
+
+        return addVal(), divideVal();
+        //return divideVal();
+      }
+      //end of math closure
+
+
+
+      //encapsulation with  using inheritance with prototyes //constructor has no return type
+     
+      function twoNumbers (numAdd1){
+          this.num1 = numAdd1;
+          this.num2 = 100;
+
+        }
+
+        twoNumbers.prototype = {
+          constructor:twoNumbers,
+          add:function(numAddVal){
+             this.num1 = numAddVal ;
+
+             let answer = (numAddVal + this.num2);
+            return document.write(numAddVal + " added to " + this.num2 + " = " + answer + "<hr/>");
+
+          }
+        }
+       
+        //calling the function to add numbers
+        let resultEncap = new twoNumbers();
+        let additionResult = resultEncap.add(40);
+        console.log(additionResult);
+        //encapsulation with  using inheritance with prototyes
+
+        //inheritance on objects
+        let laptop = {
+            Company:"Apple",
+            Os:"MACos"
+        };
+      
+      let macBookPro = Object.create (laptop);
+      console.log(macBookPro.Os);
+      //inheritance on objects
+      
+
+
+
+    </script>
+   
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/what-input/dist/what-input.js"></script>
+    <script src="node_modules/foundation-sites/dist/js/foundation.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
