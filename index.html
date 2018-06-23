@@ -4,12 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-     <script type="text/javascript">
+    <script type="text/javascript">
       "use strict"
-      //normal object declaration
+//----------------------------------normal object declaration------------------------
+ console.log("-------------------- start of objects----------")
       let blogBody = {
         "blog1":{
           "body":"Linux Administration entails the upkeep, configuration, and reliable operation of a Linux system to ensure uptime, efficient performance, proper utilization of resources, and security of the system. The report",
@@ -20,21 +18,23 @@
         "title":"Foundation and Bootstrap"
         }
       };
-      //looping through objects
+
       for (const key of Object.keys(blogBody)) {
             console.log(key, blogBody[key].title);
             console.log(key, blogBody[key].body);
         }
-      //normal object declaration
-      //object declaration using constructor
+        console.log("-------------------- end of objects----------")
+//----------------------------------end ofnormal object declaration------------------------
+
+//----------------------------------object declaration using constructor-------------
 
         function mostViewed (articleTitle) {
            this.articleTitle = articleTitle ;
         }
 
-      //object declaration using constructor
+//--------------------------------- end of object declaration using constructor----------
 
-      //function declaration and object creation using constructure prototype
+//----------------------------------function declaration and object creation using constructure prototype--------
       function blogTitle(theBlogName){
         this.bTitle = theBlogName;
       }
@@ -46,37 +46,55 @@
       }
       let blogHead = new  blogTitle("<title>javascript sample4 code</title>");
       document.write(blogHead.displayTitle()); //inheritances
-      //function declaration and object creation using constructure prototype
+//------------------------------function declaration and object creation using constructure prototype------------
 
 
+
+///-----------------envent listiner------------
+        window.addEventListener("dataSavedEvent",function(e){
+
+        let elEvnt = document.getElementById("eventdetails")
+
+        elEvnt.innerHTML = e.detail.time;
+
+        console.log("Custom Event At ",e.detail.time);
+
+        })
 
 
     </script>
-
-
     <link rel="stylesheet" href="css/app.css">
   </head>
-  <body>
+  <body onload="onLoadEvent()">
     
     <!-- Start Top Bar -->
     <div class="top-bar grid-x ">
       <div class="top-bar-left small-4 medium-6 large-7 medium-offset-1">
         <ul class="menu">
-          <li class="menu-text">
+          <li class="menu-text-custom">
             <script type="text/javascript">
-              //call to function for display object1
-              let navHead = new  blogTitle("javascript sample code");
+              let navHead = new  blogTitle("Javascript sample code");
                document.write(navHead.displayTitle()); 
-               //call to function for display
             </script>
 
           </li>
+          
 
         </ul>
       </div>
       <div class="top-bar-left small-4 medium-4 large-2">
         <ul class="menu">
-          <li class="is-active"><a href="#">Home</a></li>
+          <li class="is-active"><a href="#"  data-open="exampleModal1">Home</a></li>
+          <!-- <! foundation modal -->
+            <div class="reveal" id="exampleModal1" data-reveal>
+              <h1>Javascript is awesome</h1>
+              <p class="lead">Have you tried it </p>
+              <p>Give it a try, i bet you'll love it</p>
+              <button class="close-button" data-close aria-label="Close modal" type="button">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+         <!--  end of  sample modal -->
           <li><a href="#">Blog</a></li>
           <li><a href="#" data-toggle="blog">Login</a>
            <div class="dropdown-pane" data-position="bottom" data-alignment="left" id="blog" data-dropdown data-auto-focus="true">
@@ -90,26 +108,23 @@
         
       </div>
     </div>
-
-  
     <!-- End Top Bar -->
 
     
 
 <article class="grid-container" style="margin-top: 10px;">
 
-  <div class="callout large secondary medium-9">
-      <div class="text">
+  <div class="callout large secondary medium-9" onmouseover = "mouseoverEvent()" onmouseout = "mouseoutEvent()" id="headcontainer">
+      <div class="text" >
         
           <script type="text/javascript">
-            //call to function for display object 2
-              let calloutHead = new  blogTitle("<h1>Learning javascript ECMAScript 6</h1>");
+              let calloutHead = new  blogTitle("<h1 id='headglow'>Learning javascript ECMAScript 6</h1>");
                document.write(calloutHead.displayTitle()); 
-              //end of call to function to display obejct 2
             </script>
 
         <p class="lead">Contains all blogs written on daily basis by cytonn software developer interns; the blogs are mainly two...</p>
         <a href="#" class="primary button">Read More</a>
+       <!--  <a href="#" class="custom-button-class">custom btn class</a> -->
       </div>
     </div>
 
@@ -133,7 +148,7 @@
           </div>
         </div>
         </div>
-        <!-- nd of blog 1 -->
+        <!-- end of blog 1 -->
 
         <!-- blog 2 -->
         <div class="card">
@@ -160,71 +175,136 @@
 
       <div class="medium-3 cell" data-sticky-container>
         <div class="cardsticky" data-sticky data-anchor="content">
+
+          <!-- ----------------card 1 left side bar------------- -->
+
           <div class="card">
             <div class="card-section">
-              <h4>Javascript Math</h4><hr/>
+              <h4>Javascript Closures</h4><hr/>
+                <div id="results">
+                  
+                </div>
+                <div id="results_add">
+                  
+                </div>
+                <br/>
+              <form action="#" onsubmit="event.preventDefault();  " >
+                  First Number : <input type="number" name="baseValue" id="num1" required="required">
+                  Second Number : <input type="number" name="xponentValue" id="num2" required="required">
+                  <input  name="" type="submit" class="primary button" onclick=" math()" value="Calculate"/>
+                </form>
 
-              <div id="results">
-                
+                <script type="text/javascript"> 
+                </script>
               </div>
-              <div id="results_add">
-                
-              </div>
-              <br/>
-            <form>
-                First Number : <input type="number" name="baseValue" id="num1" required="required">
-                Second Number : <input type="number" name="xponentValue" id="num2" required="required">
-                <button type="button" class="primary button" onclick=" math()">Calculate</button>
-              </form>
+             </div>
 
-              <script type="text/javascript">
-                
-              </script>
+
+             <!-- ----------------card 2 left side bar------------- -->
+
+             <div class="card">    
+              <div class="card-section">
+             <!----------------- modal to be trigger on open----------------->
+               <div class="reveal" id="exampleModal2" data-reveal>
+                    <h1>Event  document load </h1>
+                    <p class="lead text-center">Have you tried it Javascript is awesome</p>
+                    <div class="grid-x">
+                      <div class="cell small-3 medium-2 large-2"> Subscribe :</div>
+                      <div class="cell small-8 medium-9 large-9">  <input class="" type="email" placeholder="Enter your Email" name="email_address" /></div>
+                    </div>
+                    <p class="text-center">Give it a try, i bet you'll love it</p>
+
+                        <button class="close-button" data-close aria-label="Close modal" type="button">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+
+
+
+                    <div class="reveal" id="exampleModal3" data-reveal>
+                    <h1 id="alert-error">Error  </h1>
+                    <p class="lead text-center"> numbers 1 and 2 required</p>
+                    
+                    <p class="text-center">Give it a try, i bet you'll love it</p>
+
+                        <button class="close-button" data-close aria-label="Close modal" type="button">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+
+       <!--------------- modal to be trigger on open ------------------------>
+
+                    <p class="lead">Promise and  Event </p>
+                    <div id="CustomEvent">
+
+                      <p>Promise Tossing a dice</p>
+                      <button onclick="tossDiceButton()" class="button primary">Toss</button> :<div id="tossres"></div>
+                      
+                    </div>
+                    <p class="lead">Encapsulation </p>
+                    <div id="encapsulation">
+
+                    </div>
+
+                </div>
 
             </div>
-          
+
+            <!-- ----------------card 3 left side bar------------- -->
+          <div class="card">
            <div class="card-section">
-            <h4>Most Viewed</h4>
-          <ul>
-            <li><a href="#">
-              <script type="text/javascript">
-                //using constructor partten to create objects
-                  let mostviewedTitle = new  mostViewed("Javascript is awesome");
-                  document.write(mostviewedTitle.articleTitle);
-                  //using constructor pattern to create objects
-              </script></a>
-            </li>
-            <li><a href="#">
-              <script type="text/javascript">
-                //using constructor pattern to create objects
-                let mostviewedTitle1 = new  mostViewed(" Foundation and Bootstrap");
-                document.write(mostviewedTitle1.articleTitle);
-                //using constructor pattern to create objects
-              </script></a> 
-            </li>
-            <li><a href="#">Css and Sass</a> </li>
-            <li><a href="#">Linux Administration</a> </li>
-            <li><a href="#">Control version management</a> </li>
-          </ul>
+              <h4>Prototype Object</h4>
+            <ul>
+              <li><a href="#">
+                <script type="text/javascript">
+  //-------------------------using constructor partten to create objects----------------
+                    let mostviewedTitle = new  mostViewed("Javascript is awesome");
+                    document.write(mostviewedTitle.articleTitle);
+                    
+                </script></a>
+              </li>
+              <li><a href="#">
+                <script type="text/javascript">
+                  
+                  let mostviewedTitle1 = new  mostViewed(" Foundation and Bootstrap");
+                  document.write(mostviewedTitle1.articleTitle);
+   //----------------------------using constructor pattern to create objects----------------
+                </script></a> 
+              </li>
+              <li><a href="#">Css and Sass</a> </li>
+              <li><a href="#">Linux Administration</a> </li>
+              <li><a href="#">Control version management</a> </li>
+            </ul>
+          </div>
         </div>
-        </div>
+       
+<!-- ----------------card 4------------- -->
 
           <div class="card">
             <div class="card-section">
-          <h4>Categories</h4>
+          <h4>Custom Events</h4>
            
-          <ul>
-            <li><a href="#">Blogs</a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Others</a></li>
-            <li><a href="#">Tech</a></li>
-          </ul>
+          <form action="#" onsubmit="event.preventDefault();  " >
+              <div  name="baseValue" id="eventdetails">
+                 Time :
+                 </div>
+
+                <input onclick="OnDataSaved()"  name="" type="submit" id="eventfiring" class="primary button expanded"  value="Triger Event"/>
+
+             
+
+            </form>
         </div>
         </div>
+<!-- ----------------card 2------------- -->
+       
+      </div>
+ 
+
+
         </div>
       </div>
 
-    </div>
 
     <div class="grid-x cell">
       <ul class="pagination" role="navigation" aria-label="Pagination">
@@ -239,10 +319,31 @@
     </div>
 </article>
 
-<footer>
+<footer id="blog-foot">
+
   <p class="m-0 text-center text-white">Copyright &copy; Johnson Didinya 2018</p>
 </footer>
+   <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/what-input/dist/what-input.js"></script>
+    <script src="node_modules/foundation-sites/dist/js/foundation.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/javascript">
+      // trigger by event
+      let onLoadEvent = () =>{
+         $('#exampleModal2').foundation('open');
+         //$('#myModal').foundation('reveal', 'close');
+      }
+
+      let errorForm = () => {
+        $('#exampleModal3').foundation('open');
+      }
+   
+
+    </script>
   <script type="text/javascript">
+
+//--------------------------------------------------------closure example----------------------------------------------
+
 
       //closure example 
         let math = () => {
@@ -252,43 +353,57 @@
           let num1 = document.getElementById("num1").value;
           let num2 = document.getElementById("num2").value;
 
-          console.log(num1);
-          console.log(num2);
-       //closure dividing two numbers
-         function divideVal() {
-           if (num2 == 0) {
-              return result.innerHTML += num1 + " divided by " + num2 + " = infinity<hr/>";
-           } else {
-            
-            let answer = (num1/num2 );
-             return result.innerHTML += num1 + " divided by " + num2 + " = " + answer + "<hr/>";
-            console.log(answer);
-           
-           }
-        }
-        
-        //closure adding values
-         function addVal() {
-           if (num2 == "" || num1 == "") {
-              return result.innerHTML +=  " enter two values to  <hr/>" ;
-           } else {
-            
-            let answer = (num1+num2 );
-             return result.innerHTML += num1 + " added to " + num2 + " = " + answer + "<hr/>";
-            console.log(answer);
-           
-           }
-        }
+          //validation closure
 
-        return addVal(), divideVal();
-        //return divideVal();
+          function validateForm(){
+             if (num2.length == 0 || num1.length == 0 || (typeof Number(num1) != 'number') || (typeof Number(num2) != 'number')){
+                
+                return errorForm();
+              }
+              else{
+                      console.log(num1);
+                      console.log(num2);
+                   //closure dividing two numbers
+                     function divideVal() {
+                       if (num2 == 0) {
+                          return result.innerHTML += num1 + " divided by " + num2 + " = infinity<hr/>";
+                       } else {
+                        
+                        let answer = (num1/num2 );
+                         return result.innerHTML += num1 + " divided by " + num2 + " = " + answer + "<hr/>";
+                        //console.log(answer);
+                       
+                       }
+                    }
+                    
+                    //closure adding values
+                     function addVal() {
+                       if (num2 === "undefined" || num1 === "undefined") {
+                          return result.innerHTML +=  " enter two values to  <hr/>" ;
+                       } else {
+                        
+                        let answer = (Number(num1)+Number(num2) );
+                         return result.innerHTML += num1 + " added to " + num2 + " = " + answer + "<hr/>";
+                        //console.log(answer);
+                       
+                       }
+                    }
+
+
+              }
+              return  addVal(), divideVal();
+
+          }
+
+
+        return validateForm();
+       
       }
-      //end of math closure
+      
+//----------------------------------------------------------end of closure------------------------------------------------------
 
 
-
-      //encapsulation with  using inheritance with prototyes //constructor has no return type
-     
+//---------------------encapsulation with  using inheritance in prototyes constructor has no return type---------------------  
       function twoNumbers (numAdd1){
           this.num1 = numAdd1;
           this.num2 = 100;
@@ -301,18 +416,21 @@
              this.num1 = numAddVal ;
 
              let answer = (numAddVal + this.num2);
-            return document.write(numAddVal + " added to " + this.num2 + " = " + answer + "<hr/>");
+             let encapCont = document.getElementById("encapsulation");
+
+             encapCont.innerHTML += numAddVal + " added to " + this.num2 + " = " + answer + " <br/><br/>";
+           
 
           }
         }
        
-        //calling the function to add numbers
         let resultEncap = new twoNumbers();
         let additionResult = resultEncap.add(40);
-        console.log(additionResult);
-        //encapsulation with  using inheritance with prototyes
+        //console.log(additionResult);
+//-----------------end of encapsulation with  using inheritance in prototyes constructor has no return type---------------------
 
-        //inheritance on objects
+
+//----------------------inheritance on objects---------------------------------------------------------
         let laptop = {
             Company:"Apple",
             Os:"MACos"
@@ -320,16 +438,169 @@
       
       let macBookPro = Object.create (laptop);
       console.log(macBookPro.Os);
-      //inheritance on objects
+//----------------------end inheritance on objects---------------------------------------------------------
+
+
+
+
+//--------------------------events in javascript------------------------------------------------------
+
+      let el = document.getElementById("headglow");
+      let elHead = document.getElementById("headcontainer");
+      let elHeadClass = document.getElementsByClassName("callout large secondary medium-9");
+      let intialText = el.textContent;
       
+
+      let mouseoverEvent = () => { 
+        el.innerHTML = " This is a mouseover/out event fired ";
+        el.style.color = "red";
+        elHead.style.background  = "linear-gradient(90deg, #006b5b, #a2d157)";
+      }
+
+      let mouseoutEvent = () => {
+        el.style.color = "black";
+        elHead.style.background  = "#eaeaea";
+        el.innerHTML = intialText;
+        
+      }
+
+     
+//------------------------end of events in javascript-------------------------------------------
+
+
+//------------------------------promise in javascript--------------------------------------------
+//1. promise implementation on tossing a dice
+
+      console.log("-------------------- start of promise----------")
+
+          let elToss = document.getElementById("tossres");
+
+        
+          let tossDiceButton = () =>{
+
+            let dieToss = () => {
+
+              return Math.floor(Math.random() * 6) + 1;
+
+            }
+
+            console.log('event 1');
+
+            var dieResult = new Promise((fulfill, reject) => {
+
+              var n = dieToss();
+
+              if (n === 6) {
+
+                fulfill(n);
+
+              } else {
+
+                reject(n);
+
+              }
+
+              console.log('event 2');
+            });
+
+
+           
+
+            dieResult.then((toss) =>{
+
+              console.log('Congradulation you, threw a ' + toss + '.');  
+
+                        elToss.innerHTML = '<span id="dicesuc">Congradulation you, threw a ' + toss + '</span>.';
+
+            }, (toss) =>{
+
+              console.log('Oh, no try again, threw a ' + toss + '.'); 
+
+                       elToss.innerHTML = '<span id="dice">Oh, no try again, threw a ' + toss + '</span>';
+
+
+            });
+            console.log('evenr 3');
+      }
+
+//2. promise implementation on cleaning a room
+
+      const isRoomClean = false;
+
+        
+        const willIWashTheRoom = new Promise(
+            (resolve, reject) => { 
+                if (isRoomClean) {
+                  let roomCondition = 'i will watch a movie';
+                    resolve(roomCondition);
+
+                } else {
+                  let reason = new Error('i will clean the room');
+                    reject(reason);
+                }
+
+            }
+        );
+
+
+        var goToTheMovies = () => {
+
+
+                  willIWashTheRoom
+                    .then((fulfilled) => {
+                      console.log(fulfilled);
+                    })
+                    .catch((error) =>{
+                       console.log(error.message);
+                      console.log(error.message);
+                    });
+
+                    
+                };
+
+        // call our promise
+        
+
+        
+
+//------------------------------end promise in javascript------------------------------------------
+
+
+//--------fu---------------------custom events---------------------------------------
+ 
+ function OnDataSaved(){
+  var SpecialEvent = new CustomEvent(
+                        "dataSavedEvent",
+                        {
+                         detail:
+                         {
+                           message: "Hello There",
+                           time: new Date()
+                         },
+                         bubbles: true,
+                         cancelable: true
+                        });
+  window.dispatchEvent(SpecialEvent);
+
+ }
+
+        
+
+           // console.log(SpecialEvent.detail.message);
+
+        function AssignEvent()
+          {
+            var Label = document.getElementById("CustomEvent");
+
+            Label.addEventListener(
+             "SpecialMessage", HandleEvent, false);
+          }
+      //-----------------------------custom events---------------------------------------
 
 
 
     </script>
    
-    <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="node_modules/what-input/dist/what-input.js"></script>
-    <script src="node_modules/foundation-sites/dist/js/foundation.js"></script>
-    <script src="js/app.js"></script>
+ 
   </body>
 </html>

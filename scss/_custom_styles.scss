@@ -1,0 +1,23 @@
+
+$light-gray1 : #007bff;
+$black-1 : #007bff;
+$white : #ffffff;
+$paddingfoot:10px;
+
+.menu-text-custom{
+	color:#000000;
+	font-size:1.5625rem;
+}
+#alert-error, #dice{
+	color:red;
+}
+#dicesuc{
+	color:green;
+}
+
+#blog-foot{
+	background: linear-gradient(90deg, #006b5b, #a2d157);
+	height: 50px;
+	color:$white;
+	padding-top: $paddingfoot;
+}
